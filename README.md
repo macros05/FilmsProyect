@@ -159,14 +159,6 @@ angular.json
 
 ---
 
-## 🖼️ Capturas
-Añade imágenes en `docs/` y enlázalas aquí:
-
-| Búsqueda | Detalle |
-|---|---|
-| ![search](docs/search.png) | ![detail](docs/detail.png) |
-
----
 
 ## 🗺️ Roadmap
 - [ ] Paginación con botones/scroll infinito
@@ -185,3 +177,4 @@ Añade imágenes en `docs/` y enlázalas aquí:
 ## 📄 Licencia
 Este proyecto se distribuye bajo licencia **MIT**.  
 Incluye el archivo `LICENSE` en la raíz.
+
