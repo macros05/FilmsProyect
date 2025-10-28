@@ -1,0 +1,20 @@
+<div class="container">
+  <h3>Añadir a favoritos</h3>
+
+  <mat-form-field>
+    <mat-label>Selecciona una película</mat-label>
+    <mat-select formControlName="peliculaId" required>
+      <mat-option *ngFor="let pelicula of peliculas" [value]="pelicula.id">
+        {{ pelicula.title }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="favoritoForm.get('peliculaId')?.hasError('required')">
+      Selecciona una película
+    </mat-error>
+  </mat-form-field>
+
+  <div *ngIf="selectedPelicula">
+    <p><strong>Película seleccionada:</strong> {{ selectedPelicula.title }}</p>
+    <button mat-raised-button color="primary" (click)="onSubmit()">Añadir a favoritos</button>
+  </div>
+</div>

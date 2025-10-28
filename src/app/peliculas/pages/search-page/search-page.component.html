@@ -1,0 +1,33 @@
+<div class="flex flex-column p-2">
+  <h3>Buscador de Películas</h3>
+  <mat-form-field>
+    <mat-label>Buscar película</mat-label>
+    <input
+      type="text"
+      matInput
+      [formControl]="searchInput"
+      [matAutocomplete]="auto"
+      (keyup.enter)="searchPelicula()"
+    />
+    <mat-autocomplete
+      #auto="matAutocomplete"
+      (optionSelected)="onSelectedOption($event)"
+      autoActiveFirstOption="false"
+    >
+      <mat-option *ngFor="let pelicula of peliculas" [value]="pelicula">
+        {{ pelicula.title }} || <b>FECHA PUBLICACIÓN:</b> ({{ pelicula.release_date | date:'yyyy' }}) || <b>NOTA:</b> {{pelicula.vote_average}}
+      </mat-option>
+      <mat-option
+        *ngIf="peliculas.length === 0"
+        value=""
+      >
+        No se encontraron películas
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <div class="grid mb-8 pt-4" *ngIf="peliculas.length > 0">
+    <div *ngFor="let pelicula of peliculas" class="col-12 sm:col-4 md:col-3 xl:col-2">
+      <app-pelicula-card [pelicula]="pelicula"></app-pelicula-card>
+    </div>
+  </div>
+</div>

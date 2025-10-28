@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Mis Películas Favoritas</h2>
+
+  <!-- Cargando favoritos -->
+  <div *ngIf="loading" class="loading">
+    <mat-spinner></mat-spinner>
+    <p>Cargando favoritos...</p>
+  </div>
+
+  <!-- Error al cargar favoritos -->
+  <div *ngIf="error" class="error">
+    <mat-error>{{ error }}</mat-error>
+  </div>
+
+  <!-- Si hay favoritos -->
+  <!-- Si hay favoritos -->
+  <div *ngIf="!loading && favoritos.length > 0" class="grid">
+    <div *ngFor="let favorito of favoritos" class="col-12 sm:col-6 md:col-4 lg:col-3">
+      <app-pelicula-card
+        [pelicula]="favorito"
+      ></app-pelicula-card>
+    </div>
+  </div>
+
+  <!-- Si no hay favoritos -->
+  <div *ngIf="!loading && favoritos.length === 0" class="empty-state">
+    <p>No tienes películas favoritas aún.</p>
+    <button mat-raised-button color="primary" routerLink="/peliculas/list">
+      Explorar películas
+    </button>
+  </div>
+</div>

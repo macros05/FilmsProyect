@@ -1,0 +1,33 @@
+<div class="container p-2">
+  <h1>{{ pelicula ? 'Información Pelicula' : 'Cargando Película' }}</h1>
+  <mat-divider class="mb-2"></mat-divider>
+  <div class="grid">
+    <div class="col-12 sm:col-6">
+      <mat-card *ngIf="pelicula">
+        <mat-card-header>
+          <mat-card-title>{{ pelicula.title }}</mat-card-title>
+          <mat-card-subtitle>Fecha de estreno: {{ pelicula.release_date }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="'https://image.tmdb.org/t/p/w500' + pelicula.poster_path" alt="{{ pelicula.title }}" />
+        <mat-card-content>
+          <p>{{ pelicula.overview }}</p>
+          <p>
+             <b>Nota:</b> {{ pelicula.vote_average}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="onAddToFavorites()" *ngIf="!isFavorite">
+            Añadir a favoritos
+          </button>
+          <button mat-raised-button color="warn" (click)="onDeleteFavorito(pelicula.id)" *ngIf="isFavorite">
+            Eliminar Favorito
+          </button>
+        </mat-card-actions>
+      </mat-card>
+
+      <div *ngIf="!pelicula">
+        <p>Cargando información de la película...</p>
+      </div>
+    </div>
+  </div>
+</div>

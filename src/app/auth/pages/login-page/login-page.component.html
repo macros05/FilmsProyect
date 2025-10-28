@@ -1,0 +1,41 @@
+<div class="login-container">
+  <!-- Título "MGP" agregado -->
+  <h1 class="login-title">MGP</h1>
+
+  <mat-card class="login-card">
+    <mat-card-header>
+      <mat-card-title>
+        <h2>Iniciar Sesión</h2>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form (ngSubmit)="onLogin()" class="login-form">
+        <div class="form-field">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Usuario</mat-label>
+            <input type="text" matInput [(ngModel)]="email" name="email" required>
+            <mat-icon matSuffix>person</mat-icon>
+          </mat-form-field>
+        </div>
+        <div class="form-field">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Contraseña</mat-label>
+            <input type="password" matInput [(ngModel)]="password" name="password" required>
+            <mat-icon matSuffix>lock</mat-icon>
+          </mat-form-field>
+        </div>
+        <div class="button-container">
+          <button mat-raised-button color="primary" type="submit" class="full-width">
+            <mat-icon>login</mat-icon>
+            Ingresar
+          </button>
+        </div>
+        <div class="register-link">
+          <a mat-button routerLink="/auth/register" color="accent">
+            ¿No tienes cuenta? Regístrate
+          </a>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

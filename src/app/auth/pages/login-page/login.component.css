@@ -1,0 +1,65 @@
+/* Estilos globales */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f4f8;
+}
+
+.login-title {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #4caf50;  /* Verde vibrante */
+  margin-bottom: 30px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+mat-card-header {
+  background-color: #4caf50;  /* Fondo verde */
+  color: white;
+  border-radius: 12px 12px 0 0;
+}
+
+mat-card-title h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.login-form {
+  padding: 20px;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+button {
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #388e3c;  /* Botón más oscuro al pasar el ratón */
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.register-link a {
+  color: #1976d2;  /* Color de enlace azul */
+}

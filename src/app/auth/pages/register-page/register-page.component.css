@@ -1,0 +1,46 @@
+.register-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f4f8;
+}
+.register-title {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #4caf50;
+  margin-bottom: 30px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+.register-card {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.register-form {
+  padding: 20px;
+}
+.full-width {
+  width: 100%;
+  margin-bottom: 16px;
+}
+.button-container {
+  margin: 20px 0;
+}
+.login-link {
+  text-align: center;
+  margin-top: 16px;
+}
+mat-card-header {
+  background-color: #4caf50;
+  color: white;
+  border-radius: 12px 12px 0 0;
+  padding: 16px;
+}
+mat-card-title h2 {
+  margin: 0;
+  text-align: center;
+}

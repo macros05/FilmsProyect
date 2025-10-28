@@ -1,0 +1,177 @@
+:root {
+  --background-light: #f0f0f0;
+  --background-dark: #121212;
+  --text-light: #000;
+  --text-dark: #fff;
+}
+body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+  color: #ddd;
+}
+body.dark-theme {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+body.dark-theme .movie-card {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+body.dark-theme .page-title {
+  color: #fff;
+}
+
+body.light-theme {
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+body.light-theme .movie-card {
+  background-color: #fff;
+  color: #000;
+}
+
+body.light-theme .page-title {
+  color: #000;
+}
+
+/* Título de la página */
+.page-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 1.5rem 0;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Estilo de las tarjetas de película con fondo blanco */
+.movie-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;  /* Fondo blanco para las tarjetas */
+  color: #000;  /* Texto en negro */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);  /* Sombra más suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 15px;
+  overflow: hidden;
+}
+
+/* Efecto al pasar el mouse sobre la tarjeta */
+.movie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);  /* Sombra más intensa al pasar el mouse */
+}
+
+/* Título de la película con texto en negro */
+.movie-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;  /* Títulos en negro */
+  margin: 10px;
+  overflow: hidden;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #333;
+}
+
+/* Imagen de la película */
+.movie-poster {
+  height: 320px;
+  object-fit: cover;
+  border-bottom: 2px solid #333;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el mouse sobre la imagen */
+.movie-poster:hover {
+  transform: scale(1.05);
+}
+
+/* Fechas y ratings con texto en negro */
+.release-date, .rating {
+  margin: 10px;
+  font-size: 1rem;
+  color: #333;  /* Texto más oscuro */
+  display: flex;
+  justify-content: space-between;
+}
+
+.rating {
+  font-weight: bold;
+  color: #ff9f00;
+}
+
+/* Contenedor de las películas */
+.movies-container {
+  padding: 2rem 1.5rem;
+  background-color: #121212;  /* Fondo oscuro para el contenedor */
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  justify-items: center;
+}
+
+/* Botón de acción */
+button {
+  background-color: #b8a0f8;
+  color: white;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+  border: none;
+}
+
+button:hover {
+  background-color: #ded6ee;
+  transform: scale(1.05);
+}
+
+button:focus {
+  outline: none;
+}
+
+.sidenav-container {
+  height: 100vh;
+}
+.app-sidenav {
+  width: 250px;
+  background-color: #f5f5f5;
+}
+.app-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.brand {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-left: 1rem;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+.logout-button {
+  margin-right: 1rem;
+  transition: all 0.3s ease;
+}
+.logout-button:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+.main-content {
+  padding: 20px;
+  background-color: #fafafa;
+  min-height: calc(100vh - 64px);
+}
